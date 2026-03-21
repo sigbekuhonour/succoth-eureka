@@ -1,10 +1,6 @@
 "use client";
 
-const GREEN = "#8DC63F";
-const GREEN_DARK = "#6fa52e";
-const NAVY = "#002C66";
-const NAVY_DEEP = "#000072";
-const BG = "#F7FAFF";
+// All colors are defined in globals.css and referenced via CSS custom properties.
 
 const SOCIALS = [
   {
@@ -61,13 +57,12 @@ export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="w-full" style={{ backgroundColor: BG }}>
+    <footer className="w-full" style={{ backgroundColor: "var(--background)" }}>
       {/* ── Top accent: navy bar with a centred green slash ── */}
       <div
         className="relative w-full overflow-hidden"
-        style={{ height: "5px", backgroundColor: NAVY_DEEP }}
+        style={{ height: "5px", backgroundColor: "var(--primary)" }}
       >
-        {/* diagonal green slash */}
         <div
           className="absolute top-0"
           style={{
@@ -75,7 +70,7 @@ export function Footer() {
             transform: "translateX(-50%) skewX(-20deg)",
             width: "120px",
             height: "5px",
-            backgroundColor: GREEN,
+            backgroundColor: "var(--accent)",
           }}
         />
       </div>
@@ -85,48 +80,44 @@ export function Footer() {
         {/* Left — copyright with green side-rule */}
         <div
           className="flex flex-col gap-0.5 pl-3"
-          style={{ borderLeft: `3px solid ${GREEN}` }}
+          style={{ borderLeft: "3px solid var(--accent)" }}
         >
           <span
             className="text-[10px] font-bold uppercase tracking-[0.18em]"
-            style={{ color: GREEN }}
+            style={{ color: "var(--accent)" }}
           >
             Est. {new Date().getFullYear()}
           </span>
           <p
             className="text-xs font-medium leading-snug"
-            style={{ color: NAVY }}
+            style={{ color: "var(--navy)" }}
           >
             Succoth Initiative Inc.
           </p>
           <p
             className="text-[10px] leading-snug"
-            style={{ color: NAVY, opacity: 0.55 }}
+            style={{ color: "var(--navy)", opacity: 0.55 }}
           >
             Copyright &copy; {new Date().getFullYear()}. All rights reserved.
           </p>
         </div>
 
-        {/* Center — logo with glow ring */}
-        <div className="relative flex items-center justify-center">
-          {/* subtle halo */}
-          <div
-            className="absolute rounded-full"
-            style={{
-              width: "90px",
-              height: "90px",
-              background: `radial-gradient(circle, ${GREEN}22 0%, transparent 70%)`,
-            }}
-          />
+        {/* Center — logo */}
+        <div className="flex items-center justify-center">
           <img
             src="/logo.png"
             alt="Succoth Initiative Inc."
-            className="relative h-16 w-auto object-contain mix-blend-multiply"
-            style={{ filter: "drop-shadow(0 3px 10px rgba(0,44,102,0.14))" }}
+            className="h-16 w-auto object-contain mix-blend-multiply"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)",
+              maskImage:
+                "linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent)",
+            }}
           />
         </div>
 
-        {/* Right — socials as sliding pill buttons */}
+        {/* Right — socials */}
         <div className="flex items-center gap-2">
           {SOCIALS.map((s) => (
             <a
@@ -134,23 +125,24 @@ export function Footer() {
               href={s.href}
               aria-label={s.label}
               title={s.label}
-              className="group relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full transition-all duration-250"
+              className="flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200"
               style={{
-                border: `1.5px solid ${NAVY}28`,
-                color: NAVY,
+                border: "1.5px solid var(--navy-subtle)",
+                color: "var(--navy)",
                 backgroundColor: "transparent",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = GREEN;
-                e.currentTarget.style.borderColor = GREEN;
-                e.currentTarget.style.color = BG;
+                e.currentTarget.style.backgroundColor = "var(--accent)";
+                e.currentTarget.style.borderColor = "var(--accent)";
+                e.currentTarget.style.color = "var(--background)";
                 e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow = `0 6px 16px ${GREEN}50`;
+                e.currentTarget.style.boxShadow =
+                  "0 6px 16px var(--accent-glow)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.borderColor = `${NAVY}28`;
-                e.currentTarget.style.color = NAVY;
+                e.currentTarget.style.borderColor = "var(--navy-subtle)";
+                e.currentTarget.style.color = "var(--navy)";
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "none";
               }}
@@ -161,8 +153,8 @@ export function Footer() {
         </div>
       </div>
 
-      {/* ── Wave transition: BG-coloured wave sits over GREEN background ── */}
-      <div style={{ backgroundColor: GREEN, marginBottom: "-1px" }}>
+      {/* ── Wave transition ── */}
+      <div style={{ backgroundColor: "var(--accent)", marginBottom: "-1px" }}>
         <svg
           viewBox="0 0 1440 52"
           xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +163,7 @@ export function Footer() {
         >
           <path
             d="M0,32 C180,52 360,8 540,30 C720,52 900,10 1080,32 C1260,52 1380,18 1440,28 L1440,0 L0,0 Z"
-            fill={BG}
+            fill="var(--background)"
           />
         </svg>
       </div>
@@ -179,7 +171,7 @@ export function Footer() {
       {/* ── Green mission bar ── */}
       <div
         className="w-full flex items-center justify-between px-6 py-3"
-        style={{ backgroundColor: GREEN }}
+        style={{ backgroundColor: "var(--accent)" }}
       >
         {/* Mission tagline */}
         <div className="flex-1 flex items-center justify-center gap-3 flex-wrap">
@@ -188,18 +180,17 @@ export function Footer() {
               <span key={word} className="flex items-center gap-3">
                 <span
                   className="text-xs font-extrabold uppercase tracking-[0.2em]"
-                  style={{ color: NAVY_DEEP }}
+                  style={{ color: "var(--primary)" }}
                 >
                   {word}
                 </span>
                 {i < arr.length - 1 && (
-                  /* rotated square diamond separator */
                   <span
                     className="inline-block"
                     style={{
                       width: "6px",
                       height: "6px",
-                      backgroundColor: NAVY_DEEP,
+                      backgroundColor: "var(--primary)",
                       transform: "rotate(45deg)",
                       opacity: 0.4,
                       flexShrink: 0,
@@ -211,13 +202,16 @@ export function Footer() {
           )}
         </div>
 
-        {/* Scroll to top — navy pill, right-anchored */}
+        {/* Scroll to top */}
         <button
           onClick={scrollToTop}
           aria-label="Scroll to top"
           title="Back to top"
           className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest transition-all duration-200 hover:opacity-85 hover:-translate-y-0.5 shrink-0"
-          style={{ backgroundColor: NAVY_DEEP, color: BG }}
+          style={{
+            backgroundColor: "var(--primary)",
+            color: "var(--background)",
+          }}
         >
           <svg
             width="10"
