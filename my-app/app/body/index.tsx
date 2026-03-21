@@ -248,7 +248,7 @@ export function Body() {
 
             <div>
               <a
-                href="/"
+                href="/find-a-home"
                 className="inline-block bg-primary text-primary-foreground text-sm font-semibold px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity duration-200"
               >
                 Find &amp; Chat
@@ -339,7 +339,7 @@ export function Body() {
 
             <div>
               <a
-                href="/"
+                href="/list-a-home"
                 className="inline-block border border-white/40 text-white text-sm font-semibold px-6 py-2.5 rounded-lg hover:bg-white hover:text-navy transition-all duration-200"
               >
                 List &amp; Manage
@@ -347,7 +347,6 @@ export function Body() {
             </div>
           </div>
 
-          {/* Expert Advice Card */}
           <div
             className="group relative overflow-hidden rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-shadow duration-300"
             style={{ backgroundColor: "#C8F745" }}
@@ -360,7 +359,6 @@ export function Body() {
                 Navigating legal complexity should not be your burden.
               </p>
 
-              {/* Services list */}
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-navy text-sm font-medium">
                   <svg
@@ -418,8 +416,8 @@ export function Body() {
 
             <div>
               <a
-                href="/"
-                className="inline-block border-2 border-navy text-navy text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-navy hover:text-white transition-all duration-200 w-full text-center"
+                href="/contact"
+                className="inline-block border border-navy text-navy text-sm font-semibold px-6 py-2.5 rounded-lg hover:bg-white hover:text-navy transition-all duration-200"
               >
                 Consult Now
               </a>
