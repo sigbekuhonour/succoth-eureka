@@ -1,21 +1,27 @@
+import Link from "next/link";
 import HeaderText from "./HeaderText";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-foreground/10 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <span className="text-primary font-semibold text-lg">
+    <header className="absolute top-0 left-0 z-50 w-full bg-transparent">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-8">
+        <Link href="/" className="text-white font-bold text-xl tracking-tight hover:opacity-90 transition-opacity">
           Succoth Initiative Inc.
-        </span>
+        </Link>
 
-        <nav className="flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           <HeaderText headerText="Find a Home" route="/" />
           <HeaderText headerText="List a Home" route="/" />
           <HeaderText headerText="Events" route="/" />
           <HeaderText headerText="Contact" route="/contact" />
         </nav>
 
-        <HeaderText headerText="Login" route="/admin/login" />
+        <Link
+          href="/"
+          className="text-sm font-semibold text-white border border-white/40 rounded-full px-6 py-2 hover:bg-white hover:text-navy transition-all duration-300"
+        >
+          Login
+        </Link>
       </div>
     </header>
   );

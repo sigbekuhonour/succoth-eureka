@@ -12,9 +12,9 @@ export function Hero() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen custom-bg">
       <Image
-        src={"/HeroBackground.jpg"}
+        src={"/HeroBackgroundDefault.jpg"}
         alt="Hero Background Image"
         fill
         priority
