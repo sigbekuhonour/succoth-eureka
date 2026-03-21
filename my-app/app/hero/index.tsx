@@ -23,7 +23,7 @@ export function Hero() {
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <h1
           className={`text-white text-4xl md:text-6xl font-bold text-center px-4 drop-shadow-lg
-            ${visible ? "animate-fade-in-up" : "opacity-0"}`}
+            ${visible ? "animate-fade-in-up" : "opacity-0"} w-190`}
         >
           Connecting the right people to the right homes
         </h1>

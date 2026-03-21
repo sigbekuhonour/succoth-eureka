@@ -89,9 +89,9 @@ export default function ListAHome() {
     <div className="flex flex-col min-h-screen font-sans">
       <InnerHeader />
 
-      <section className="bg-linear-to-br from-navy to-primary text-white py-20 px-6">
+      <section className="bg-linear-to-br from-navy to-primary py-20 px-6">
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
             List Your Property
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">

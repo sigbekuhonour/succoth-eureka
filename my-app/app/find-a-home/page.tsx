@@ -1,5 +1,6 @@
 import { InnerHeader } from "../components/InnerHeader";
 import Link from "next/link";
+import { Footer } from "../footer";
 
 export const metadata = {
   title: "Find a Home | Succoth Initiative Inc.",
@@ -206,7 +207,9 @@ export default function FindAHome() {
             </Link>
           </div>
         </div>
+        
       </section>
+      <Footer />
     </div>
   );
 }

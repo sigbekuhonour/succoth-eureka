@@ -58,7 +58,6 @@ export function Footer() {
 
   return (
     <footer className="w-full" style={{ backgroundColor: "var(--background)" }}>
-      {/* ── Top accent: navy bar with a centred green slash ── */}
       <div
         className="relative w-full overflow-hidden"
         style={{ height: "5px", backgroundColor: "var(--primary)" }}
