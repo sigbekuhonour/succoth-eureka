@@ -1,10 +1,10 @@
 import Link from "next/link";
-import HeaderText from "../components/HeaderText";
+import HeaderText from "./HeaderText";
 
-export function Header() {
+export function InnerHeader() {
   return (
-    <header className="absolute top-0 left-0 z-50 w-full bg-transparent">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-8">
+    <header className="w-full bg-navy font-sans">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
         <Link
           href="/"
           className="text-white font-bold text-xl tracking-tight hover:opacity-90 transition-opacity"
